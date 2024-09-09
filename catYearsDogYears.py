@@ -1,32 +1,48 @@
-def calculate_pet_ages(humanYears):
-    # Inicializamos las variables para los años de gato y perro
-    catYears = 0
-    dogYears = 0
+#Calcula la edad del perro y el gato en años humanos
+def calculate_pet_ages(human_years):
 
-    # Calculamos los años de gato y perro basándonos en los años humanos
-    if humanYears == 1:  # Al primer año
-        catYears = 15
-        dogYears = 15
-    elif humanYears == 2:  # Al segundo año
-        catYears = 15 + 9
-        dogYears = 15 + 9
-    else:  # A partir de 3 años
-        catYears = 15 + 9 + (humanYears - 2) * 4
-        dogYears = 15 + 9 + (humanYears - 2) * 5
+    # Calcular años de gato
+    #Al primer año
+    if human_years == 1:
+        cat_years = 15
+        #Segundo año
+    elif human_years == 2:
+        #Tres años y mas
+        cat_years = 15 + 9
+    else:
+        #Da una lista con los años humanos
+        cat_years = 15 + 9 + (human_years - 2) * 4
 
-    # Devuelve una lista con los años humanos, gato y perro
-    return [humanYears, catYears, dogYears]
+    # Calcular años de perro
+    if human_years == 1:
+        dog_years = 15
+    elif human_years == 2:
+        dog_years = 15 + 9
+    else:
+        dog_years = 15 + 9 + (human_years - 2) * 5
 
-# Solicita la edad humana por consola
-try:
-    human_years_input = int(input("Introduce la edad en años humanos: "))
-    # Llama a la función para los cálculos
-    result = calculate_pet_ages(human_years_input)
-    print(f"Los años humanos son: {result[0]}")#indica que se está utilizando un f-string (formatted string literal)
-    print(f"Los años humanos de gato son: {result[1]}")
-    print(f"Los años humanos de perro son: {result[2]}")
-    # Imprime el tipo de datos devuelto por la función
-    print(f"Tipo de datos devuelto: {type(result)}")
+    return [human_years, cat_years, dog_years]
 
-except ValueError:
-    print("Por favor, introduce un número entero válido.")
+# Ejemplo de uso
+#human_years = 12  # puedes cambiar este valor a cualquier número entero positivo
+#result = calculate_pet_ages(human_years) # Llama a la funcion para los calculos
+#print(result)
+#Esto imprimirá el resultado
+# Pedir al usuario que ingrese los años humanos
+
+#Se ingresan datos por consola
+# Solicita al usuario que ingrese la cantidad de años humanos y la convierte en un número entero
+human_years = int(input("Ingresa la cantidad de años humanos: "))
+
+# Llama a la función 'calculate_pet_ages' pasando el número de años humanos como argumento
+# Se espera que esta función devuelva una tupla con tres valores:
+result = calculate_pet_ages(human_years)
+
+# Imprime la edad en años humanos que fue ingresada por el usuario
+print(f"Edad en años humanos: {result[0]}")
+
+# Imprime la edad en años de gato, que es el segundo valor en la tupla 'result'
+print(f"Edad en años de gato: {result[1]}")
+
+# Imprime la edad en años de perro, que es el tercer valor en la tupla 'result'
+print(f"Edad en años de perro: {result[2]}")
