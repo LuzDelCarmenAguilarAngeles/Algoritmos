@@ -1,4 +1,8 @@
+"""
+Programa que calcula la edad de perro y gato en humano
+"""
 def calculate_pet_ages(humanYears):
+
     # Inicializamos las variables para los años de gato y perro
     catYears = 0
     dogYears = 0
@@ -30,3 +34,4 @@ try:
 
 except ValueError:
     print("Por favor, introduce un número entero válido.")
+
